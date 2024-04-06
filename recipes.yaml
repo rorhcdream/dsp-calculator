@@ -1276,7 +1276,7 @@
   input:
   - name: Stone
     amount: 10
-  enabled: true
+  enabled: false
 
 - output:
   - name: Crystal Silicon
