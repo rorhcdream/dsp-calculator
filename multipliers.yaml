@@ -6,13 +6,13 @@ Assembler:
 - name: Assembling Machine Mk.3
   value: 1.5
 
-Smelter:
+Smelting Facility:
 - name: Smelter
   value: 1
 - name: Plane Smelter
   value: 2
 
-Chemical Plant:
+Chemical Facility:
 - name: Chemical Plant
   value: 1
 - name: Quantum Chemical Plant

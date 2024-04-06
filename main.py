@@ -12,15 +12,15 @@ multipliers_path = "multipliers.yaml"
 @dataclass
 class Multipliers:
     assembler: Mapping[str, float]
-    smelter: Mapping[str, float]
-    chemical_plant: Mapping[str, float]
+    smelting_facility: Mapping[str, float]
+    chemical_facility: Mapping[str, float]
 
 
 @dataclass
 class Recipe:
     input: List["Material"]
     output: List["Material"]
-    building: str
+    made_in: str
     duration: int
     enabled: bool
 
@@ -35,8 +35,8 @@ class UserInput:
     material: str
     production_rate: float
     assembler: str
-    smelter: str
-    chemical_plant: str
+    smelting_facility: str
+    chemical_facility: str
     matrix_lab_height: int
 
 
@@ -53,12 +53,13 @@ def load_multipliers() -> Multipliers:
         assembler={
             material["name"]: material["value"] for material in multipliers["Assembler"]
         },
-        smelter={
-            material["name"]: material["value"] for material in multipliers["Smelter"]
-        },
-        chemical_plant={
+        smelting_facility={
             material["name"]: material["value"]
-            for material in multipliers["Chemical Plant"]
+            for material in multipliers["Smelting Facility"]
+        },
+        chemical_facility={
+            material["name"]: material["value"]
+            for material in multipliers["Chemical Facility"]
         },
     )
 
@@ -84,8 +85,8 @@ def get_user_input() -> UserInput:
     material = input("Enter the material you want to produce: ")
     production_rate = input("Enter the production rate (default - 1): ")
     assembler = input("Enter the assembler (default - Assembling Machine Mk.1): ")
-    smelter = input("Enter the smelter (default - Smelter): ")
-    chemical_plant = input("Enter the chemical plant (default - Chemical Plant): ")
+    smelter = input("Enter the smelting facility (default - Smelter): ")
+    chemical_plant = input("Enter the chemical facility (default - Chemical Plant): ")
     matrix_lab_height = input("Enter the matrix lab height (default - 3): ")
 
     production_rate = float(production_rate) if production_rate else 1
@@ -142,18 +143,22 @@ def get_requirements(
         return {target_material: RequirementForMaterial(target_rate, {})}
 
     recipe = recipe_map[target_material]
-    if recipe.building == "Assembler":
+    if recipe.made_in == "Assembler":
         building_multiplier = multipliers.assembler[user_input.assembler]
-    elif recipe.building == "Smelter":
-        building_multiplier = multipliers.smelter[user_input.smelter]
-    elif recipe.building == "Chemical Plant":
-        building_multiplier = multipliers.chemical_plant[user_input.chemical_plant]
-    elif recipe.building == "Matrix Lab":
+    elif recipe.made_in == "Smelting Facility":
+        building_multiplier = multipliers.smelting_facility[
+            user_input.smelting_facility
+        ]
+    elif recipe.made_in == "Chemical Facility":
+        building_multiplier = multipliers.chemical_facility[
+            user_input.chemical_facility
+        ]
+    elif recipe.made_in == "Research Facility":
         building_multiplier = user_input.matrix_lab_height
-    elif recipe.building == "Refining Facility":
+    elif recipe.made_in == "Refining Facility":
         building_multiplier = 1
     else:
-        raise ValueError(f"Invalid building type: {recipe.building}")
+        raise ValueError(f"Invalid building type: {recipe.made_in}")
 
     def find_recipe_output_material() -> Recipe.Material:
         for material in recipe.output:
@@ -179,7 +184,7 @@ def get_requirements(
             target_material: RequirementForMaterial(
                 target_rate,
                 {
-                    recipe.building: target_rate
+                    recipe.made_in: target_rate
                     * recipe.duration
                     / output_recipe_material.amount
                     / building_multiplier
