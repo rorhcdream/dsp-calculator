@@ -2,6 +2,7 @@ from dataclasses import dataclass
 from typing import List, Mapping
 
 import yaml
+from tabulate import tabulate
 
 materials_path = "materials.yaml"
 recipes_path = "recipes.yaml"
@@ -205,7 +206,14 @@ if __name__ == "__main__":
         multipliers,
     )
 
+    table = []
     for material, requirement in requirements.items():
-        print(f"{material}: {requirement.rate}")
+        table.append([material, requirement.rate])
         for building, count in requirement.buildings.items():
-            print(f"  {building}: {count}")
+            table[-1].extend([building, count])
+
+    print(
+        tabulate(
+            table, headers=["Material", "Rate", "Building", "Count"], numalign="left",
+        )
+    )
