@@ -104,7 +104,6 @@ def get_user_input() -> UserInput:
 
 
 def build_recipe_map(recipes: List[Recipe]) -> Mapping[str, Recipe]:
-    print(recipes[0].output)
     return {
         output.name: recipe
         for recipe in recipes
