@@ -17,17 +17,18 @@ class Multipliers:
 
 
 @dataclass
+class MaterialWithAmount:
+    name: str
+    amount: float
+
+
+@dataclass
 class Recipe:
-    input: List["Material"]
-    output: List["Material"]
+    input: List[MaterialWithAmount]
+    output: List[MaterialWithAmount]
     made_in: str
     duration: int
     enabled: bool
-
-    @dataclass
-    class Material:
-        name: str
-        amount: int
 
 
 @dataclass
@@ -73,12 +74,7 @@ class UserInput:
 @dataclass
 class RequirementForMaterial:
     rate: float
-    building: "Building"
-
-    @dataclass
-    class Building:
-        name: str
-        count: float
+    building: MaterialWithAmount
 
 
 Requirements = Mapping[str, RequirementForMaterial]
@@ -107,9 +103,11 @@ def load_recipes() -> List[Recipe]:
         recipes = yaml.load(file, Loader=yaml.FullLoader)
 
     for recipe in recipes:
-        recipe["input"] = [Recipe.Material(**material) for material in recipe["input"]]
+        recipe["input"] = [
+            MaterialWithAmount(**material) for material in recipe["input"]
+        ]
         recipe["output"] = [
-            Recipe.Material(**material) for material in recipe["output"]
+            MaterialWithAmount(**material) for material in recipe["output"]
         ]
 
     recipes = [Recipe(**recipe) for recipe in recipes]
@@ -162,7 +160,7 @@ def merge_requirements(
                 ].building.name = requirement_for_material.building.name
                 merged_requirements[
                     material
-                ].building.count += requirement_for_material.building.count
+                ].building.amount += requirement_for_material.building.amount
             else:
                 merged_requirements[material] = requirement_for_material
     return merged_requirements
@@ -178,13 +176,13 @@ def get_requirements(
     if target_material not in recipe_map:
         return {
             target_material: RequirementForMaterial(
-                target_rate, RequirementForMaterial.Building(name="", count=0)
+                target_rate, MaterialWithAmount(name="", amount=0)
             )
         }
 
     recipe = recipe_map[target_material]
 
-    def find_recipe_output_material() -> Recipe.Material:
+    def find_recipe_output_material() -> MaterialWithAmount:
         for material in recipe.output:
             if material.name == target_material:
                 return material
@@ -207,9 +205,9 @@ def get_requirements(
         {
             target_material: RequirementForMaterial(
                 target_rate,
-                RequirementForMaterial.Building(
+                MaterialWithAmount(
                     name=user_input.building_for_facility(recipe.made_in),
-                    count=target_rate
+                    amount=target_rate
                     * recipe.duration
                     / output_recipe_material.amount
                     / user_input.multiplier_for_facility(multipliers, recipe.made_in),
@@ -243,8 +241,8 @@ if __name__ == "__main__":
                 material,
                 f"{requirement.rate:.2f}",
                 requirement.building.name,
-                f"{requirement.building.count:.2f}"
-                if requirement.building.count != 0
+                f"{requirement.building.amount:.2f}"
+                if requirement.building.amount != 0
                 else "",
             ]
         )
