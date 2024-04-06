@@ -149,6 +149,8 @@ def get_requirements(
         building_multiplier = multipliers.chemical_plant[user_input.chemical_plant]
     elif recipe.building == "Matrix Lab":
         building_multiplier = user_input.matrix_lab_height
+    elif recipe.building == "Refining Facility":
+        building_multiplier = 1
     else:
         raise ValueError(f"Invalid building type: {recipe.building}")
 

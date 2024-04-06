@@ -1515,3 +1515,15 @@
   - name: Antimatter
     amount: 1
   enabled: true
+
+- output:
+  - name: Refined Oil
+    amount: 2
+  - name: Hydrogen
+    amount: 1
+  duration: 4
+  building: Refining Facility
+  input:
+  - name: Crude Oil
+    amount: 2
+  enabled: true
