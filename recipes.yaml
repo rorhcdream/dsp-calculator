@@ -260,7 +260,7 @@
     amount: 30
   - name: Water
     amount: 10
-  enabled: true
+  enabled: false
 
 - output:
   - name: Crystal Silicon
@@ -1326,7 +1326,7 @@
   input:
   - name: Kimberlite Ore
     amount: 1
-  enabled: true
+  enabled: false
 
 - output:
   - name: Steel
