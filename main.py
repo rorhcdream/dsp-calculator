@@ -172,11 +172,6 @@ def get_requirements(
         for material in recipe.input
     ]
 
-    print(
-        f"Calculating requirements for {target_material} at {target_rate} using {recipe.building} with multiplier {building_multiplier}"
-    )
-    print(f"Recipe: {recipe.building} - {recipe.duration} seconds - {recipe.enabled}")
-    print(f"Output: {output_recipe_material.amount} {target_material}")
     requirements.append(
         {
             target_material: RequirementForMaterial(
