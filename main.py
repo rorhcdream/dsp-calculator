@@ -21,6 +21,14 @@ class MaterialWithAmount:
     name: str
     amount: float
 
+    def __mul__(self, multiplier: float) -> "MaterialWithAmount":
+        return MaterialWithAmount(self.name, self.amount * multiplier)
+
+    __rmul__ = __mul__
+
+    def __truediv__(self, divisor: float) -> "MaterialWithAmount":
+        return MaterialWithAmount(self.name, self.amount / divisor)
+
 
 @dataclass
 class Recipe:
@@ -75,6 +83,7 @@ class UserInput:
 class RequirementForMaterial:
     rate: float
     building: MaterialWithAmount
+    input: List[MaterialWithAmount]
 
 
 Requirements = Mapping[str, RequirementForMaterial]
@@ -176,7 +185,7 @@ def get_requirements(
     if target_material not in recipe_map:
         return {
             target_material: RequirementForMaterial(
-                target_rate, MaterialWithAmount(name="", amount=0)
+                target_rate, MaterialWithAmount(name="", amount=0), input=[],
             )
         }
 
@@ -204,14 +213,18 @@ def get_requirements(
     requirements.append(
         {
             target_material: RequirementForMaterial(
-                target_rate,
-                MaterialWithAmount(
+                rate=target_rate,
+                building=MaterialWithAmount(
                     name=user_input.building_for_facility(recipe.made_in),
-                    amount=target_rate
-                    * recipe.duration
-                    / output_recipe_material.amount
-                    / user_input.multiplier_for_facility(multipliers, recipe.made_in),
-                ),
+                    amount=target_rate,
+                )
+                * recipe.duration
+                / output_recipe_material.amount
+                / user_input.multiplier_for_facility(multipliers, recipe.made_in),
+                input=[
+                    material * target_rate / output_recipe_material.amount
+                    for material in recipe.input
+                ],
             )
         }
     )
@@ -234,20 +247,26 @@ if __name__ == "__main__":
         multipliers,
     )
 
+    def format_float(value: float) -> str:
+        return f"{value:.2f}" if value != 0 else ""
+
     table = []
+    max_input = 0
     for material, requirement in requirements.items():
         table.append(
             [
                 material,
-                f"{requirement.rate:.2f}",
+                format_float(requirement.rate),
                 requirement.building.name,
-                f"{requirement.building.amount:.2f}"
-                if requirement.building.amount != 0
-                else "",
+                format_float(requirement.building.amount),
             ]
         )
-    print(
-        tabulate(
-            table, headers=["Material", "Rate", "Building", "Count"], numalign="left",
-        )
-    )
+        max_input = max(max_input, len(requirement.input))
+        for input_material in requirement.input:
+            table[-1].extend([input_material.name, format_float(input_material.amount)])
+
+    headers = ["Material", "Rate", "Building", "Amount"]
+    for i in range(max_input):
+        headers.extend([f"Input {i + 1}", "Amount"])
+
+    print(tabulate(table, headers=headers, numalign="left"))
