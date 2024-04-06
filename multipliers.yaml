@@ -1,0 +1,20 @@
+Assembler:
+- name: Assembling Machine Mk.1
+  value: 0.75
+- name: Assembling Machine Mk.2
+  value: 1
+- name: Assembling Machine Mk.3
+  value: 1.5
+
+Smelter:
+- name: Smelter
+  value: 1
+- name: Plane Smelter
+  value: 2
+
+Chemical Plant:
+- name: Chemical Plant
+  value: 1
+- name: Quantum Chemical Plant
+  value: 2
+

@@ -1,0 +1,1517 @@
+- output:
+  - name: Gear
+    amount: 1
+  duration: 1
+  building: Assembler
+  input:
+  - name: Iron Ingot
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Magnetic Coil
+    amount: 2
+  duration: 1
+  building: Assembler
+  input:
+  - name: Magnet
+    amount: 2
+  - name: Copper Ingot
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Prism
+    amount: 2
+  duration: 2
+  building: Assembler
+  input:
+  - name: Glass
+    amount: 3
+  enabled: true
+
+- output:
+  - name: Plasma Exciter
+    amount: 1
+  duration: 2
+  building: Assembler
+  input:
+  - name: Magnetic Coil
+    amount: 4
+  - name: Prism
+    amount: 2
+  enabled: true
+
+- output:
+  - name: Hydrogen Fuel Rod
+    amount: 2
+  duration: 6
+  building: Assembler
+  input:
+  - name: Titanium Ingot
+    amount: 1
+  - name: Hydrogen
+    amount: 10
+  enabled: true
+
+- output:
+  - name: Thruster
+    amount: 1
+  duration: 4
+  building: Assembler
+  input:
+  - name: Steel
+    amount: 2
+  - name: Copper Ingot
+    amount: 3
+  enabled: true
+
+- output:
+  - name: Reinforced Thruster
+    amount: 1
+  duration: 6
+  building: Assembler
+  input:
+  - name: Titanium Alloy
+    amount: 5
+  - name: Electromagnetic Turbine
+    amount: 5
+  enabled: true
+
+- output:
+  - name: Titanium Crystal
+    amount: 1
+  duration: 4
+  building: Assembler
+  input:
+  - name: Organic Crystal
+    amount: 1
+  - name: Titanium Ingot
+    amount: 3
+  enabled: true
+
+- output:
+  - name: Casimir Crystal
+    amount: 1
+  duration: 4
+  building: Assembler
+  input:
+  - name: Titanium Crystal
+    amount: 1
+  - name: Graphene
+    amount: 2
+  - name: Hydrogen
+    amount: 12
+  enabled: true
+
+- output:
+  - name: Casimir Crystal
+    amount: 1
+  duration: 4
+  building: Assembler
+  input:
+  - name: Optical Grating Crystal
+    amount: 8
+  - name: Graphene
+    amount: 2
+  - name: Hydrogen
+    amount: 12
+  enabled: true
+
+- output:
+  - name: Titanium Glass
+    amount: 2
+  duration: 5
+  building: Assembler
+  input:
+  - name: Glass
+    amount: 2
+  - name: Titanium Ingot
+    amount: 2
+  - name: Water
+    amount: 2
+  enabled: true
+
+- output:
+  - name: Particle Broadband
+    amount: 1
+  duration: 8
+  building: Assembler
+  input:
+  - name: Carbon Nanotube
+    amount: 2
+  - name: Crystal Silicon
+    amount: 2
+  - name: Plastic
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Plane Filter
+    amount: 1
+  duration: 12
+  building: Assembler
+  input:
+  - name: Casimir Crystal
+    amount: 1
+  - name: Titanium Glass
+    amount: 2
+  enabled: true
+
+- output:
+  - name: Deuteron Fuel Rod
+    amount: 2
+  duration: 12
+  building: Assembler
+  input:
+  - name: Titanium Alloy
+    amount: 1
+  - name: Deuterium
+    amount: 20
+  - name: Super-Magnetic Ring
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Annihilation Constraint Sphere
+    amount: 1
+  duration: 20
+  building: Assembler
+  input:
+  - name: Particle Container
+    amount: 1
+  - name: Processor
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Antimatter Fuel Rod
+    amount: 2
+  duration: 24
+  building: Assembler
+  input:
+  - name: Antimatter
+    amount: 12
+  - name: Hydrogen
+    amount: 12
+  - name: Annihilation Constraint Sphere
+    amount: 1
+  - name: Titanium Alloy
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Circuit Board
+    amount: 2
+  duration: 1
+  building: Assembler
+  input:
+  - name: Iron Ingot
+    amount: 2
+  - name: Copper Ingot
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Processor
+    amount: 1
+  duration: 3
+  building: Assembler
+  input:
+  - name: Circuit Board
+    amount: 2
+  - name: Microcrystalline Component
+    amount: 2
+  enabled: true
+
+- output:
+  - name: Quantum Chip
+    amount: 1
+  duration: 6
+  building: Assembler
+  input:
+  - name: Processor
+    amount: 2
+  - name: Plane Filter
+    amount: 2
+  enabled: true
+
+- output:
+  - name: Microcrystalline Component
+    amount: 1
+  duration: 2
+  building: Assembler
+  input:
+  - name: High-Purity Silicon
+    amount: 2
+  - name: Copper Ingot
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Organic Crystal
+    amount: 1
+  duration: 6
+  building: Assembler
+  input:
+  - name: Log
+    amount: 20
+  - name: Plant Fuel
+    amount: 30
+  - name: Water
+    amount: 10
+  enabled: true
+
+- output:
+  - name: Crystal Silicon
+    amount: 2
+  duration: 1.5
+  building: Assembler
+  input:
+  - name: Fractal Silicon
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Photon Combiner
+    amount: 1
+  duration: 3
+  building: Assembler
+  input:
+  - name: Prism
+    amount: 2
+  - name: Circuit Board
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Photon Combiner
+    amount: 1
+  duration: 3
+  building: Assembler
+  input:
+  - name: Optical Grating Crystal
+    amount: 1
+  - name: Circuit Board
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Solar Sail
+    amount: 2
+  duration: 4
+  building: Assembler
+  input:
+  - name: Graphene
+    amount: 1
+  - name: Photon Combiner
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Space Warper
+    amount: 1
+  duration: 10
+  building: Assembler
+  input:
+  - name: Graviton Lens
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Space Warper
+    amount: 8
+  duration: 10
+  building: Assembler
+  input:
+  - name: Gravity Matrix
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Frame name
+    amount: 1
+  duration: 6
+  building: Assembler
+  input:
+  - name: Carbon Nanotube
+    amount: 4
+  - name: Titanium Alloy
+    amount: 1
+  - name: High-Purity Silicon
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Dyson Sphere Component
+    amount: 1
+  duration: 8
+  building: Assembler
+  input:
+  - name: Frame name
+    amount: 3
+  - name: Solar Sail
+    amount: 3
+  - name: Processor
+    amount: 3
+  enabled: true
+
+- output:
+  - name: Small Carrier Rocket
+    amount: 1
+  duration: 6
+  building: Assembler
+  input:
+  - name: Dyson Sphere Component
+    amount: 2
+  - name: Deuteron Fuel Rod
+    amount: 4
+  - name: Quantum Chip
+    amount: 2
+  enabled: true
+
+- output:
+  - name: Logistics Drone
+    amount: 1
+  duration: 4
+  building: Assembler
+  input:
+  - name: Iron Ingot
+    amount: 5
+  - name: Processor
+    amount: 2
+  - name: Thruster
+    amount: 2
+  enabled: true
+
+- output:
+  - name: Logistics Vessel
+    amount: 1
+  duration: 6
+  building: Assembler
+  input:
+  - name: Titanium Alloy
+    amount: 10
+  - name: Processor
+    amount: 10
+  - name: Reinforced Thruster
+    amount: 2
+  enabled: true
+
+- output:
+  - name: Electric Motor
+    amount: 1
+  duration: 2
+  building: Assembler
+  input:
+  - name: Iron Ingot
+    amount: 2
+  - name: Gear
+    amount: 1
+  - name: Magnetic Coil
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Electromagnetic Turbine
+    amount: 1
+  duration: 2
+  building: Assembler
+  input:
+  - name: Electric Motor
+    amount: 2
+  - name: Magnetic Coil
+    amount: 2
+  enabled: true
+
+- output:
+  - name: Particle Container
+    amount: 1
+  duration: 4
+  building: Assembler
+  input:
+  - name: Electromagnetic Turbine
+    amount: 2
+  - name: Copper Ingot
+    amount: 2
+  - name: Graphene
+    amount: 2
+  enabled: true
+
+- output:
+  - name: Particle Container
+    amount: 1
+  duration: 4
+  building: Assembler
+  input:
+  - name: Unipolar Magnet
+    amount: 10
+  - name: Copper Ingot
+    amount: 2
+  enabled: true
+
+- output:
+  - name: Graviton Lens
+    amount: 1
+  duration: 6
+  building: Assembler
+  input:
+  - name: Diamond
+    amount: 4
+  - name: Strange Matter
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Super-Magnetic Ring
+    amount: 1
+  duration: 3
+  building: Assembler
+  input:
+  - name: Electromagnetic Turbine
+    amount: 2
+  - name: Magnet
+    amount: 3
+  - name: Energetic Graphite
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Proliferator Mk
+    amount: 1
+  duration: 0.5
+  building: Assembler
+  input:
+  - name: Coal
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Proliferator Mk
+    amount: 1
+  duration: 1
+  building: Assembler
+  input:
+  - name: Proliferator Mk
+    amount: 2
+  - name: Diamond
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Proliferator Mk
+    amount: 1
+  duration: 2
+  building: Assembler
+  input:
+  - name: Proliferator Mk
+    amount: 2
+  - name: Carbon Nanotube
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Foundation
+    amount: 1
+  duration: 1
+  building: Assembler
+  input:
+  - name: Stone Brick
+    amount: 3
+  - name: Steel
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Logistics Bot
+    amount: 1
+  duration: 2
+  building: Assembler
+  input:
+  - name: Iron Ingot
+    amount: 2
+  - name: Electromagnetic Turbine
+    amount: 1
+  - name: Processor
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Wind Turbine
+    amount: 1
+  duration: 4
+  building: Assembler
+  input:
+  - name: Iron Ingot
+    amount: 6
+  - name: Gear
+    amount: 1
+  - name: Magnetic Coil
+    amount: 3
+  enabled: true
+
+- output:
+  - name: Tesla Tower
+    amount: 1
+  duration: 1
+  building: Assembler
+  input:
+  - name: Iron Ingot
+    amount: 2
+  - name: Magnetic Coil
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Matrix Lab
+    amount: 1
+  duration: 3
+  building: Assembler
+  input:
+  - name: Iron Ingot
+    amount: 8
+  - name: Glass
+    amount: 4
+  - name: Circuit Board
+    amount: 4
+  - name: Magnetic Coil
+    amount: 4
+  enabled: true
+
+- output:
+  - name: Wireless Power Tower
+    amount: 1
+  duration: 3
+  building: Assembler
+  input:
+  - name: Tesla Tower
+    amount: 1
+  - name: Plasma Exciter
+    amount: 3
+  enabled: true
+
+- output:
+  - name: Oil Extractor
+    amount: 1
+  duration: 8
+  building: Assembler
+  input:
+  - name: Steel
+    amount: 12
+  - name: Stone Brick
+    amount: 12
+  - name: Circuit Board
+    amount: 6
+  - name: Plasma Exciter
+    amount: 4
+  enabled: true
+
+- output:
+  - name: Oil Refinery
+    amount: 1
+  duration: 6
+  building: Assembler
+  input:
+  - name: Steel
+    amount: 10
+  - name: Stone Brick
+    amount: 10
+  - name: Circuit Board
+    amount: 6
+  - name: Plasma Exciter
+    amount: 6
+  enabled: true
+
+- output:
+  - name: Chemical Plant
+    amount: 1
+  duration: 5
+  building: Assembler
+  input:
+  - name: Steel
+    amount: 8
+  - name: Stone Brick
+    amount: 8
+  - name: Glass
+    amount: 8
+  - name: Circuit Board
+    amount: 2
+  enabled: true
+
+- output:
+  - name: Miniature Particle Collider
+    amount: 1
+  duration: 15
+  building: Assembler
+  input:
+  - name: Titanium Alloy
+    amount: 20
+  - name: Frame name
+    amount: 20
+  - name: Super-Magnetic Ring
+    amount: 25
+  - name: Graphene
+    amount: 10
+  - name: Processor
+    amount: 8
+  enabled: true
+
+- output:
+  - name: Artificial Star
+    amount: 1
+  duration: 30
+  building: Assembler
+  input:
+  - name: Titanium Alloy
+    amount: 20
+  - name: Frame name
+    amount: 20
+  - name: Annihilation Constraint Sphere
+    amount: 10
+  - name: Quantum Chip
+    amount: 10
+  enabled: true
+
+- output:
+  - name: Assembling Machine Mk
+    amount: 1
+  duration: 2
+  building: Assembler
+  input:
+  - name: Iron Ingot
+    amount: 4
+  - name: Gear
+    amount: 8
+  - name: Circuit Board
+    amount: 4
+  enabled: true
+
+- output:
+  - name: Assembling Machine Mk
+    amount: 1
+  duration: 3
+  building: Assembler
+  input:
+  - name: Assembling Machine Mk
+    amount: 1
+  - name: Graphene
+    amount: 8
+  - name: Processor
+    amount: 4
+  enabled: true
+
+- output:
+  - name: Assembling Machine Mk
+    amount: 1
+  duration: 4
+  building: Assembler
+  input:
+  - name: Assembling Machine Mk
+    amount: 1
+  - name: Particle Broadband
+    amount: 8
+  - name: Quantum Chip
+    amount: 2
+  enabled: true
+
+- output:
+  - name: Mining Machine
+    amount: 1
+  duration: 3
+  building: Assembler
+  input:
+  - name: Iron Ingot
+    amount: 4
+  - name: Circuit Board
+    amount: 2
+  - name: Magnetic Coil
+    amount: 2
+  - name: Gear
+    amount: 2
+  enabled: true
+
+- output:
+  - name: Water Pump
+    amount: 1
+  duration: 4
+  building: Assembler
+  input:
+  - name: Iron Ingot
+    amount: 8
+  - name: Stone Brick
+    amount: 4
+  - name: Electric Motor
+    amount: 4
+  - name: Circuit Board
+    amount: 2
+  enabled: true
+
+- output:
+  - name: Arc Smelter
+    amount: 1
+  duration: 3
+  building: Assembler
+  input:
+  - name: Iron Ingot
+    amount: 4
+  - name: Stone Brick
+    amount: 2
+  - name: Circuit Board
+    amount: 4
+  - name: Magnetic Coil
+    amount: 2
+  enabled: true
+
+- output:
+  - name: Thermal Power Plant
+    amount: 1
+  duration: 5
+  building: Assembler
+  input:
+  - name: Iron Ingot
+    amount: 10
+  - name: Stone Brick
+    amount: 4
+  - name: Gear
+    amount: 4
+  - name: Magnetic Coil
+    amount: 4
+  enabled: true
+
+- output:
+  - name: Solar Panel
+    amount: 1
+  duration: 6
+  building: Assembler
+  input:
+  - name: Copper Ingot
+    amount: 10
+  - name: High-Purity Silicon
+    amount: 10
+  - name: Circuit Board
+    amount: 5
+  enabled: true
+
+- output:
+  - name: EM-Rail Ejector
+    amount: 1
+  duration: 6
+  building: Assembler
+  input:
+  - name: Steel
+    amount: 20
+  - name: Gear
+    amount: 20
+  - name: Processor
+    amount: 5
+  - name: Super-Magnetic Ring
+    amount: 10
+  enabled: true
+
+- output:
+  - name: Ray Receiver
+    amount: 1
+  duration: 8
+  building: Assembler
+  input:
+  - name: Steel
+    amount: 20
+  - name: High-Purity Silicon
+    amount: 20
+  - name: Photon Combiner
+    amount: 10
+  - name: Processor
+    amount: 5
+  - name: Super-Magnetic Ring
+    amount: 20
+  enabled: true
+
+- output:
+  - name: Satellite Substation
+    amount: 1
+  duration: 5
+  building: Assembler
+  input:
+  - name: Wireless Power Tower
+    amount: 1
+  - name: Super-Magnetic Ring
+    amount: 10
+  - name: Frame name
+    amount: 2
+  enabled: true
+
+- output:
+  - name: Accumulator
+    amount: 1
+  duration: 3
+  building: Assembler
+  input:
+  - name: Iron Ingot
+    amount: 6
+  - name: Super-Magnetic Ring
+    amount: 1
+  - name: Crystal Silicon
+    amount: 3
+  enabled: true
+
+- output:
+  - name: Energy Exchanger
+    amount: 1
+  duration: 15
+  building: Assembler
+  input:
+  - name: Titanium Alloy
+    amount: 40
+  - name: Steel
+    amount: 40
+  - name: Processor
+    amount: 40
+  - name: Particle Container
+    amount: 8
+  enabled: true
+
+- output:
+  - name: Vertical Launching Silo
+    amount: 1
+  duration: 30
+  building: Assembler
+  input:
+  - name: Titanium Alloy
+    amount: 80
+  - name: Frame name
+    amount: 30
+  - name: Graviton Lens
+    amount: 20
+  - name: Quantum Chip
+    amount: 10
+  enabled: true
+
+- output:
+  - name: Conveyor Belt MK
+    amount: 3
+  duration: 1
+  building: Assembler
+  input:
+  - name: Iron Ingot
+    amount: 2
+  - name: Gear
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Conveyor Belt MK
+    amount: 3
+  duration: 1
+  building: Assembler
+  input:
+  - name: Conveyor Belt MK
+    amount: 3
+  - name: Electromagnetic Turbine
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Conveyor Belt MK
+    amount: 3
+  duration: 1
+  building: Assembler
+  input:
+  - name: Conveyor Belt MK
+    amount: 3
+  - name: Super-Magnetic Ring
+    amount: 1
+  - name: Graphene
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Sorter MK
+    amount: 1
+  duration: 1
+  building: Assembler
+  input:
+  - name: Iron Ingot
+    amount: 1
+  - name: Circuit Board
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Sorter MK
+    amount: 2
+  duration: 1
+  building: Assembler
+  input:
+  - name: Sorter MK
+    amount: 2
+  - name: Electric Motor
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Sorter MK
+    amount: 2
+  duration: 1
+  building: Assembler
+  input:
+  - name: Sorter MK
+    amount: 2
+  - name: Electromagnetic Turbine
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Storage MK
+    amount: 1
+  duration: 2
+  building: Assembler
+  input:
+  - name: Iron Ingot
+    amount: 4
+  - name: Stone Brick
+    amount: 4
+  enabled: true
+
+- output:
+  - name: Storage MK
+    amount: 1
+  duration: 4
+  building: Assembler
+  input:
+  - name: Steel
+    amount: 8
+  - name: Stone Brick
+    amount: 8
+  enabled: true
+
+- output:
+  - name: Splitter
+    amount: 1
+  duration: 2
+  building: Assembler
+  input:
+  - name: Iron Ingot
+    amount: 3
+  - name: Gear
+    amount: 2
+  - name: Circuit Board
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Planetary Logistics Station
+    amount: 1
+  duration: 20
+  building: Assembler
+  input:
+  - name: Steel
+    amount: 40
+  - name: Titanium Ingot
+    amount: 40
+  - name: Processor
+    amount: 40
+  - name: Particle Container
+    amount: 20
+  enabled: true
+
+- output:
+  - name: Interstellar Logistics Station
+    amount: 1
+  duration: 30
+  building: Assembler
+  input:
+  - name: Planetary Logistics Station
+    amount: 1
+  - name: Titanium Alloy
+    amount: 40
+  - name: Particle Container
+    amount: 20
+  enabled: true
+
+- output:
+  - name: Spray Coater
+    amount: 1
+  duration: 3
+  building: Assembler
+  input:
+  - name: Steel
+    amount: 4
+  - name: Plasma Exciter
+    amount: 2
+  - name: Circuit Board
+    amount: 2
+  - name: Microcrystalline Component
+    amount: 2
+  enabled: true
+
+- output:
+  - name: Fractionator
+    amount: 1
+  duration: 3
+  building: Assembler
+  input:
+  - name: Steel
+    amount: 8
+  - name: Stone Brick
+    amount: 4
+  - name: Glass
+    amount: 4
+  - name: Processor
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Orbital Collector
+    amount: 1
+  duration: 30
+  building: Assembler
+  input:
+  - name: Interstellar Logistics Station
+    amount: 1
+  - name: Super-Magnetic Ring
+    amount: 50
+  - name: Reinforced Thruster
+    amount: 20
+  - name: Accumulator (Full)
+    amount: 20
+  enabled: true
+
+- output:
+  - name: Mini Fusion Power Plant
+    amount: 1
+  duration: 10
+  building: Assembler
+  input:
+  - name: Titanium Alloy
+    amount: 12
+  - name: Super-Magnetic Ring
+    amount: 10
+  - name: Carbon Nanotube
+    amount: 8
+  - name: Processor
+    amount: 4
+  enabled: true
+
+- output:
+  - name: Storage Tank
+    amount: 1
+  duration: 2
+  building: Assembler
+  input:
+  - name: Iron Ingot
+    amount: 8
+  - name: Stone Brick
+    amount: 4
+  - name: Glass
+    amount: 4
+  enabled: true
+
+- output:
+  - name: Plane Smelter
+    amount: 1
+  duration: 5
+  building: Assembler
+  input:
+  - name: Arc Smelter
+    amount: 1
+  - name: Frame name
+    amount: 5
+  - name: Plane Filter
+    amount: 4
+  - name: Unipolar Magnet
+    amount: 15
+  enabled: true
+
+- output:
+  - name: Traffic Monitor
+    amount: 1
+  duration: 2
+  building: Assembler
+  input:
+  - name: Iron Ingot
+    amount: 3
+  - name: Gear
+    amount: 2
+  - name: Glass
+    amount: 1
+  - name: Circuit Board
+    amount: 2
+  enabled: true
+
+- output:
+  - name: Geothermal Power Station
+    amount: 1
+  duration: 6
+  building: Assembler
+  input:
+  - name: Steel
+    amount: 15
+  - name: Copper Ingot
+    amount: 20
+  - name: Photon Combiner
+    amount: 4
+  - name: Super-Magnetic Ring
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Advanced Mining Machine
+    amount: 1
+  duration: 20
+  building: Assembler
+  input:
+  - name: Titanium Alloy
+    amount: 20
+  - name: Frame name
+    amount: 10
+  - name: Super-Magnetic Ring
+    amount: 10
+  - name: Quantum Chip
+    amount: 4
+  - name: Optical Grating Crystal
+    amount: 40
+  enabled: true
+
+- output:
+  - name: Automatic Piler
+    amount: 1
+  duration: 4
+  building: Assembler
+  input:
+  - name: Steel
+    amount: 3
+  - name: Gear
+    amount: 4
+  - name: Super-Magnetic Ring
+    amount: 1
+  - name: Processor
+    amount: 2
+  enabled: true
+
+- output:
+  - name: Logistics Distributor
+    amount: 1
+  duration: 8
+  building: Assembler
+  input:
+  - name: Iron Ingot
+    amount: 8
+  - name: Plasma Exciter
+    amount: 4
+  - name: Processor
+    amount: 4
+  enabled: true
+
+- output:
+  - name: Quantum Chemical Plant
+    amount: 1
+  duration: 10
+  building: Assembler
+  input:
+  - name: Chemical Plant
+    amount: 1
+  - name: Titanium Glass
+    amount: 10
+  - name: Strange Matter
+    amount: 3
+  - name: Quantum Chip
+    amount: 3
+  enabled: true
+
+- output:
+  - name: Iron Ingot
+    amount: 1
+  duration: 1
+  building: Smelter
+  input:
+  - name: Iron Ore
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Magnet
+    amount: 1
+  duration: 1.5
+  building: Smelter
+  input:
+  - name: Iron Ore
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Copper Ingot
+    amount: 1
+  duration: 1
+  building: Smelter
+  input:
+  - name: Copper Ore
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Stone Brick
+    amount: 1
+  duration: 1
+  building: Smelter
+  input:
+  - name: Stone
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Energetic Graphite
+    amount: 1
+  duration: 2
+  building: Smelter
+  input:
+  - name: Coal
+    amount: 2
+  enabled: true
+
+- output:
+  - name: Silicon Ore
+    amount: 1
+  duration: 10
+  building: Smelter
+  input:
+  - name: Stone
+    amount: 10
+  enabled: true
+
+- output:
+  - name: Crystal Silicon
+    amount: 1
+  duration: 2
+  building: Smelter
+  input:
+  - name: High-Purity Silicon
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Glass
+    amount: 1
+  duration: 2
+  building: Smelter
+  input:
+  - name: Stone
+    amount: 2
+  enabled: true
+
+- output:
+  - name: High-Purity Silicon
+    amount: 1
+  duration: 2
+  building: Smelter
+  input:
+  - name: Silicon Ore
+    amount: 2
+  enabled: true
+
+- output:
+  - name: Diamond
+    amount: 1
+  duration: 2
+  building: Smelter
+  input:
+  - name: Energetic Graphite
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Diamond
+    amount: 2
+  duration: 1.5
+  building: Smelter
+  input:
+  - name: Kimberlite Ore
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Steel
+    amount: 1
+  duration: 3
+  building: Smelter
+  input:
+  - name: Iron Ingot
+    amount: 3
+  enabled: true
+
+- output:
+  - name: Titanium Ingot
+    amount: 1
+  duration: 2
+  building: Smelter
+  input:
+  - name: Titanium Ore
+    amount: 2
+  enabled: true
+
+- output:
+  - name: Titanium Alloy
+    amount: 4
+  duration: 12
+  building: Smelter
+  input:
+  - name: Titanium Ingot
+    amount: 4
+  - name: Steel
+    amount: 4
+  - name: Sulfuric Acid
+    amount: 8
+  enabled: true
+
+- output:
+  - name: Plastic
+    amount: 1
+  duration: 3
+  building: Chemical Plant
+  input:
+  - name: Refined Oil
+    amount: 2
+  - name: Energetic Graphite
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Sulfuric Acid
+    amount: 4
+  duration: 6
+  building: Chemical Plant
+  input:
+  - name: Refined Oil
+    amount: 6
+  - name: Stone
+    amount: 8
+  - name: Water
+    amount: 4
+  enabled: true
+
+- output:
+  - name: Organic Crystal
+    amount: 1
+  duration: 6
+  building: Chemical Plant
+  input:
+  - name: Plastic
+    amount: 2
+  - name: Refined Oil
+    amount: 1
+  - name: Water
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Graphene
+    amount: 2
+  duration: 3
+  building: Chemical Plant
+  input:
+  - name: Energetic Graphite
+    amount: 3
+  - name: Sulfuric Acid
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Carbon Nanotube
+    amount: 2
+  duration: 4
+  building: Chemical Plant
+  input:
+  - name: Graphene
+    amount: 3
+  - name: Titanium Ingot
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Carbon Nanotube
+    amount: 2
+  duration: 4
+  building: Chemical Plant
+  input:
+  - name: Spiniform Stalagmite Crystal
+    amount: 6
+  enabled: true
+
+- output:
+  - name: Electromagnetic Matrix
+    amount: 1
+  duration: 3
+  building: Matrix Lab
+  input:
+  - name: Magnetic Coil
+    amount: 1
+  - name: Circuit Board
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Energy Matrix
+    amount: 1
+  duration: 6
+  building: Matrix Lab
+  input:
+  - name: Energetic Graphite
+    amount: 2
+  - name: Hydrogen
+    amount: 2
+  enabled: true
+
+- output:
+  - name: Structure Matrix
+    amount: 1
+  duration: 8
+  building: Matrix Lab
+  input:
+  - name: Diamond
+    amount: 1
+  - name: Titanium Crystal
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Information Matrix
+    amount: 1
+  duration: 10
+  building: Matrix Lab
+  input:
+  - name: Processor
+    amount: 2
+  - name: Particle Broadband
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Gravity Matrix
+    amount: 2
+  duration: 24
+  building: Matrix Lab
+  input:
+  - name: Graviton Lens
+    amount: 1
+  - name: Quantum Chip
+    amount: 1
+  enabled: true
+
+- output:
+  - name: Universe Matrix
+    amount: 1
+  duration: 15
+  building: Matrix Lab
+  input:
+  - name: Electromagnetic Matrix
+    amount: 1
+  - name: Energy Matrix
+    amount: 1
+  - name: Structure Matrix
+    amount: 1
+  - name: Information Matrix
+    amount: 1
+  - name: Gravity Matrix
+    amount: 1
+  - name: Antimatter
+    amount: 1
+  enabled: true
