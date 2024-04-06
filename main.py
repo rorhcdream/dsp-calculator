@@ -39,16 +39,49 @@ class UserInput:
     chemical_facility: str
     matrix_lab_height: int
 
+    def multiplier_for_facility(
+        self, multipliers: Multipliers, facility: str,
+    ) -> float:
+        if facility == "Assembler":
+            return multipliers.assembler[self.assembler]
+        elif facility == "Smelting Facility":
+            return multipliers.smelting_facility[self.smelting_facility]
+        elif facility == "Chemical Facility":
+            return multipliers.chemical_facility[self.chemical_facility]
+        elif facility == "Research Facility":
+            return self.matrix_lab_height
+        elif facility == "Refining Facility":
+            return 1
+        else:
+            raise ValueError(f"Invalid facility: {facility}")
+
+    def building_for_facility(self, facility: str) -> str:
+        if facility == "Assembler":
+            return self.assembler
+        elif facility == "Smelting Facility":
+            return self.smelting_facility
+        elif facility == "Chemical Facility":
+            return self.chemical_facility
+        elif facility == "Research Facility":
+            return "Matrix Lab"
+        elif facility == "Refining Facility":
+            return "Oil Refinery"
+        else:
+            raise ValueError(f"Invalid facility: {facility}")
+
 
 @dataclass
 class RequirementForMaterial:
     rate: float
-    facility: "Facility"
+    building: "Building"
 
     @dataclass
-    class Facility:
+    class Building:
         name: str
         count: float
+
+
+Requirements = Mapping[str, RequirementForMaterial]
 
 
 def load_multipliers() -> Multipliers:
@@ -67,9 +100,6 @@ def load_multipliers() -> Multipliers:
             for material in multipliers["Chemical Facility"]
         },
     )
-
-
-Requirements = Mapping[str, RequirementForMaterial]
 
 
 def load_recipes() -> List[Recipe]:
@@ -129,10 +159,10 @@ def merge_requirements(
                 merged_requirements[material].rate += requirement_for_material.rate
                 merged_requirements[
                     material
-                ].facility.name = requirement_for_material.facility.name
+                ].building.name = requirement_for_material.building.name
                 merged_requirements[
                     material
-                ].facility.count += requirement_for_material.facility.count
+                ].building.count += requirement_for_material.building.count
             else:
                 merged_requirements[material] = requirement_for_material
     return merged_requirements
@@ -148,27 +178,11 @@ def get_requirements(
     if target_material not in recipe_map:
         return {
             target_material: RequirementForMaterial(
-                target_rate, RequirementForMaterial.Facility(name="", count=0)
+                target_rate, RequirementForMaterial.Building(name="", count=0)
             )
         }
 
     recipe = recipe_map[target_material]
-    if recipe.made_in == "Assembler":
-        building_multiplier = multipliers.assembler[user_input.assembler]
-    elif recipe.made_in == "Smelting Facility":
-        building_multiplier = multipliers.smelting_facility[
-            user_input.smelting_facility
-        ]
-    elif recipe.made_in == "Chemical Facility":
-        building_multiplier = multipliers.chemical_facility[
-            user_input.chemical_facility
-        ]
-    elif recipe.made_in == "Research Facility":
-        building_multiplier = user_input.matrix_lab_height
-    elif recipe.made_in == "Refining Facility":
-        building_multiplier = 1
-    else:
-        raise ValueError(f"Invalid building type: {recipe.made_in}")
 
     def find_recipe_output_material() -> Recipe.Material:
         for material in recipe.output:
@@ -193,12 +207,12 @@ def get_requirements(
         {
             target_material: RequirementForMaterial(
                 target_rate,
-                RequirementForMaterial.Facility(
-                    name=recipe.made_in,
+                RequirementForMaterial.Building(
+                    name=user_input.building_for_facility(recipe.made_in),
                     count=target_rate
                     * recipe.duration
                     / output_recipe_material.amount
-                    / building_multiplier,
+                    / user_input.multiplier_for_facility(multipliers, recipe.made_in),
                 ),
             )
         }
@@ -228,9 +242,9 @@ if __name__ == "__main__":
             [
                 material,
                 f"{requirement.rate:.2f}",
-                requirement.facility.name,
-                f"{requirement.facility.count:.2f}"
-                if requirement.facility.count != 0
+                requirement.building.name,
+                f"{requirement.building.count:.2f}"
+                if requirement.building.count != 0
                 else "",
             ]
         )
