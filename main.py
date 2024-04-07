@@ -28,8 +28,13 @@ class Multipliers:
 
 @dataclass
 class MaterialWithAmount:
-    name: str
-    amount: float
+    name: str = ""
+    amount: float = 0
+
+    def __add__(self, other: "MaterialWithAmount") -> "MaterialWithAmount":
+        if self.name != other.name:
+            raise ValueError("Cannot add materials with different names")
+        return MaterialWithAmount(self.name, self.amount + other.amount)
 
     def __mul__(self, multiplier: float) -> "MaterialWithAmount":
         return MaterialWithAmount(self.name, self.amount * multiplier)
@@ -216,6 +221,11 @@ def merge_requirements(
                 merged_requirements[
                     material
                 ].building.amount += requirement_for_material.building.amount
+                merged_requirements[material].input = [
+                    merged_requirements[material].input[i]
+                    + requirement_for_material.input[i]
+                    for i in range(len(requirement_for_material.input))
+                ]
             else:
                 merged_requirements[material] = requirement_for_material
     return merged_requirements
@@ -231,7 +241,7 @@ def get_requirements(
     if target_material not in recipe_map:
         return {
             target_material: RequirementForMaterial(
-                target_rate, MaterialWithAmount(name="", amount=0), input=[],
+                target_rate, MaterialWithAmount(), input=[],
             )
         }
 
@@ -299,23 +309,47 @@ if __name__ == "__main__":
     def format_float(value: float) -> str:
         return f"{value:.2f}" if value != 0 else ""
 
-    table = []
-    max_input = 0
-    for material, requirement in requirements.items():
-        table.append(
-            [
-                material,
-                format_float(requirement.rate),
-                requirement.building.name,
-                format_float(requirement.building.amount),
-            ]
-        )
-        max_input = max(max_input, len(requirement.input))
-        for input_material in requirement.input:
-            table[-1].extend([input_material.name, format_float(input_material.amount)])
+    def print_material_table():
+        table = []
+        max_input = 0
+        for material, requirement in requirements.items():
+            table.append(
+                [
+                    material,
+                    format_float(requirement.rate),
+                    requirement.building.name,
+                    format_float(requirement.building.amount),
+                ]
+            )
+            max_input = max(max_input, len(requirement.input))
+            for input_material in requirement.input:
+                table[-1].extend(
+                    [input_material.name, format_float(input_material.amount)]
+                )
 
-    headers = ["Material", "Rate", "Building", "Amount"]
-    for i in range(max_input):
-        headers.extend([f"Input {i + 1}", "Amount"])
+        headers = ["Material", "Rate", "Building", "Amount"]
+        for i in range(max_input):
+            headers.extend([f"Input {i + 1}", "Amount"])
+        print(tabulate(table, headers=headers, numalign="left"))
 
-    print(tabulate(table, headers=headers, numalign="left"))
+    def print_building_table():
+        buildings: Mapping[str, MaterialWithAmount] = {}
+        for _, requirement in requirements.items():
+            if requirement.building.name == "":
+                continue
+            if requirement.building.name in buildings:
+                buildings[requirement.building.name] += requirement.building
+            else:
+                buildings[requirement.building.name] = requirement.building
+
+        table = [
+            [building, format_float(material.amount)]
+            for building, material in buildings.items()
+        ]
+
+        print(tabulate(table, headers=["Building", "Amount"], numalign="left",))
+
+    print()
+    print_material_table()
+    print()
+    print_building_table()
