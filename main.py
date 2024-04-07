@@ -6,7 +6,17 @@ from tabulate import tabulate
 
 materials_path = "materials.yaml"
 recipes_path = "recipes.yaml"
+facility_buildings_path = "facility_buildings.yaml"
 multipliers_path = "multipliers.yaml"
+
+
+@dataclass
+class FacilityBuildings:
+    assembler: List[str]
+    smelting_facility: List[str]
+    chemical_facility: List[str]
+    research_facility: List[str]
+    refining_facility: List[str]
 
 
 @dataclass
@@ -89,22 +99,10 @@ class RequirementForMaterial:
 Requirements = Mapping[str, RequirementForMaterial]
 
 
-def load_multipliers() -> Multipliers:
-    with open(multipliers_path, "r") as file:
-        multipliers = yaml.load(file, Loader=yaml.FullLoader)
-    return Multipliers(
-        assembler={
-            material["name"]: material["value"] for material in multipliers["Assembler"]
-        },
-        smelting_facility={
-            material["name"]: material["value"]
-            for material in multipliers["Smelting Facility"]
-        },
-        chemical_facility={
-            material["name"]: material["value"]
-            for material in multipliers["Chemical Facility"]
-        },
-    )
+def load_materials() -> List[str]:
+    with open(materials_path, "r") as file:
+        materials = yaml.load(file, Loader=yaml.FullLoader)
+    return materials
 
 
 def load_recipes() -> List[Recipe]:
@@ -123,19 +121,67 @@ def load_recipes() -> List[Recipe]:
     return recipes
 
 
-def get_user_input() -> UserInput:
-    material = input("Enter the material you want to produce: ")
-    production_rate = input("Enter the production rate (default - 1): ")
-    assembler = input("Enter the assembler (default - Assembling Machine Mk.1): ")
-    smelter = input("Enter the smelting facility (default - Smelter): ")
-    chemical_plant = input("Enter the chemical facility (default - Chemical Plant): ")
-    matrix_lab_height = input("Enter the matrix lab height (default - 3): ")
+def load_facility_buildings() -> FacilityBuildings:
+    with open(facility_buildings_path, "r") as file:
+        facility_buildings = yaml.load(file, Loader=yaml.FullLoader)
+    return FacilityBuildings(
+        assembler=facility_buildings["Assembler"],
+        smelting_facility=facility_buildings["Smelting Facility"],
+        chemical_facility=facility_buildings["Chemical Facility"],
+        research_facility=facility_buildings["Research Facility"],
+        refining_facility=facility_buildings["Refining Facility"],
+    )
 
+
+def load_multipliers() -> Multipliers:
+    with open(multipliers_path, "r") as file:
+        multipliers = yaml.load(file, Loader=yaml.FullLoader)
+    return Multipliers(
+        assembler={
+            material["name"]: material["value"] for material in multipliers["Assembler"]
+        },
+        smelting_facility={
+            material["name"]: material["value"]
+            for material in multipliers["Smelting Facility"]
+        },
+        chemical_facility={
+            material["name"]: material["value"]
+            for material in multipliers["Chemical Facility"]
+        },
+    )
+
+
+def get_user_input(
+    materials: List[str], facility_buildings: FacilityBuildings,
+) -> UserInput:
+    material = input("Enter the material you want to produce: ")
+    if material not in materials:
+        raise ValueError(f"Invalid material: {material}")
+
+    production_rate = input("Enter the production rate (default - 1): ")
     production_rate = float(production_rate) if production_rate else 1
+    if production_rate <= 0:
+        raise ValueError("Production rate must be positive")
+
+    assembler = input("Enter the assembler (default - Assembling Machine Mk.1): ")
     assembler = assembler if assembler else "Assembling Machine Mk.1"
+    if assembler not in facility_buildings.assembler:
+        raise ValueError(f"Invalid assembler: {assembler}")
+
+    smelter = input("Enter the smelting facility (default - Smelter): ")
     smelter = smelter if smelter else "Smelter"
+    if smelter not in facility_buildings.smelting_facility:
+        raise ValueError(f"Invalid smelting facility: {smelter}")
+
+    chemical_plant = input("Enter the chemical facility (default - Chemical Plant): ")
     chemical_plant = chemical_plant if chemical_plant else "Chemical Plant"
+    if chemical_plant not in facility_buildings.chemical_facility:
+        raise ValueError(f"Invalid chemical facility: {chemical_plant}")
+
+    matrix_lab_height = input("Enter the matrix lab height (default - 3): ")
     matrix_lab_height = int(matrix_lab_height) if matrix_lab_height else 3
+    if matrix_lab_height <= 0:
+        raise ValueError("Matrix lab height must be positive")
 
     return UserInput(
         material,
@@ -233,9 +279,12 @@ def get_requirements(
 
 
 if __name__ == "__main__":
+    materials = load_materials()
     recipes = load_recipes()
+    facility_buildings = load_facility_buildings()
     multipliers = load_multipliers()
-    user_input = get_user_input()
+
+    user_input = get_user_input(materials, facility_buildings)
 
     recipe_map = build_recipe_map(recipes)
 
