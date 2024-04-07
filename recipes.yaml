@@ -477,7 +477,7 @@
   enabled: true
 
 - output:
-  - name: Proliferator Mk
+  - name: Proliferator Mk.1
     amount: 1
   duration: 0.5
   made_in: Assembler
@@ -487,24 +487,24 @@
   enabled: true
 
 - output:
-  - name: Proliferator Mk
+  - name: Proliferator Mk.2
     amount: 1
   duration: 1
   made_in: Assembler
   input:
-  - name: Proliferator Mk
+  - name: Proliferator Mk.1
     amount: 2
   - name: Diamond
     amount: 1
   enabled: true
 
 - output:
-  - name: Proliferator Mk
+  - name: Proliferator Mk.3
     amount: 1
   duration: 2
   made_in: Assembler
   input:
-  - name: Proliferator Mk
+  - name: Proliferator Mk.2
     amount: 2
   - name: Carbon Nanotube
     amount: 1
@@ -673,7 +673,7 @@
   enabled: true
 
 - output:
-  - name: Assembling Machine Mk
+  - name: Assembling Machine Mk.1
     amount: 1
   duration: 2
   made_in: Assembler
@@ -687,12 +687,12 @@
   enabled: true
 
 - output:
-  - name: Assembling Machine Mk
+  - name: Assembling Machine Mk.2
     amount: 1
   duration: 3
   made_in: Assembler
   input:
-  - name: Assembling Machine Mk
+  - name: Assembling Machine Mk.1
     amount: 1
   - name: Graphene
     amount: 8
@@ -701,12 +701,12 @@
   enabled: true
 
 - output:
-  - name: Assembling Machine Mk
+  - name: Assembling Machine Mk.3
     amount: 1
   duration: 4
   made_in: Assembler
   input:
-  - name: Assembling Machine Mk
+  - name: Assembling Machine Mk.2
     amount: 1
   - name: Particle Broadband
     amount: 8
@@ -887,7 +887,7 @@
   enabled: true
 
 - output:
-  - name: Conveyor Belt MK
+  - name: Conveyor Belt Mk.1
     amount: 3
   duration: 1
   made_in: Assembler
@@ -899,24 +899,24 @@
   enabled: true
 
 - output:
-  - name: Conveyor Belt MK
+  - name: Conveyor Belt Mk.2
     amount: 3
   duration: 1
   made_in: Assembler
   input:
-  - name: Conveyor Belt MK
+  - name: Conveyor Belt Mk.1
     amount: 3
   - name: Electromagnetic Turbine
     amount: 1
   enabled: true
 
 - output:
-  - name: Conveyor Belt MK
+  - name: Conveyor Belt Mk.3
     amount: 3
   duration: 1
   made_in: Assembler
   input:
-  - name: Conveyor Belt MK
+  - name: Conveyor Belt Mk.2
     amount: 3
   - name: Super-Magnetic Ring
     amount: 1
@@ -925,7 +925,7 @@
   enabled: true
 
 - output:
-  - name: Sorter MK
+  - name: Sorter Mk.1
     amount: 1
   duration: 1
   made_in: Assembler
@@ -937,31 +937,31 @@
   enabled: true
 
 - output:
-  - name: Sorter MK
+  - name: Sorter Mk.2
     amount: 2
   duration: 1
   made_in: Assembler
   input:
-  - name: Sorter MK
+  - name: Sorter Mk.1
     amount: 2
   - name: Electric Motor
     amount: 1
   enabled: true
 
 - output:
-  - name: Sorter MK
+  - name: Sorter Mk.3
     amount: 2
   duration: 1
   made_in: Assembler
   input:
-  - name: Sorter MK
+  - name: Sorter Mk.2
     amount: 2
   - name: Electromagnetic Turbine
     amount: 1
   enabled: true
 
 - output:
-  - name: Storage MK
+  - name: Storage Mk.1
     amount: 1
   duration: 2
   made_in: Assembler
@@ -973,7 +973,7 @@
   enabled: true
 
 - output:
-  - name: Storage MK
+  - name: Storage Mk.2
     amount: 1
   duration: 4
   made_in: Assembler

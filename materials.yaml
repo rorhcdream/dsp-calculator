@@ -7,7 +7,6 @@
 - Reinforced Thruster
 - Titanium Crystal
 - Casimir Crystal
-- Casimir Crystal
 - Titanium Glass
 - Particle Broadband
 - Plane Filter
@@ -18,12 +17,9 @@
 - Processor
 - Quantum Chip
 - Microcrystalline Component
-- Organic Crystal
 - Crystal Silicon
 - Photon Combiner
-- Photon Combiner
 - Solar Sail
-- Space Warper
 - Space Warper
 - Frame Material
 - Dyson Sphere Component
@@ -33,12 +29,11 @@
 - Electric Motor
 - Electromagnetic Turbine
 - Particle Container
-- Particle Container
 - Graviton Lens
 - Super-Magnetic Ring
-- Proliferator Mk
-- Proliferator Mk
-- Proliferator Mk
+- Proliferator Mk.1
+- Proliferator Mk.2
+- Proliferator Mk.3
 - Foundation
 - Logistics Bot
 - Wind Turbine
@@ -50,9 +45,9 @@
 - Chemical Plant
 - Miniature Particle Collider
 - Artificial Star
-- Assembling Machine Mk
-- Assembling Machine Mk
-- Assembling Machine Mk
+- Assembling Machine Mk.1
+- Assembling Machine Mk.2
+- Assembling Machine Mk.3
 - Mining Machine
 - Water Pump
 - Arc Smelter
@@ -64,14 +59,14 @@
 - Accumulator
 - Energy Exchanger
 - Vertical Launching Silo
-- Conveyor Belt MK
-- Conveyor Belt MK
-- Conveyor Belt MK
-- Sorter MK
-- Sorter MK
-- Sorter MK
-- Storage MK
-- Storage MK
+- Conveyor Belt Mk.1
+- Conveyor Belt Mk.2
+- Conveyor Belt Mk.3
+- Sorter Mk.1
+- Sorter Mk.2
+- Sorter Mk.3
+- Storage Mk.1
+- Storage Mk.2
 - Splitter
 - Planetary Logistics Station
 - Interstellar Logistics Station
@@ -97,7 +92,6 @@
 - Glass
 - High-Purity Silicon
 - Diamond
-- Diamond
 - Steel
 - Titanium Ingot
 - Titanium Alloy
@@ -105,7 +99,6 @@
 - Sulfuric Acid
 - Organic Crystal
 - Graphene
-- Carbon Nanotube
 - Carbon Nanotube
 - Electromagnetic Matrix
 - Energy Matrix
