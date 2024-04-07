@@ -329,7 +329,7 @@ if __name__ == "__main__":
 
         headers = ["Material", "Rate", "Building", "Amount"]
         for i in range(max_input):
-            headers.extend([f"Input {i + 1}", "Amount"])
+            headers.extend([f"Input {i + 1}", "Rate"])
         print(tabulate(table, headers=headers, numalign="left"))
 
     def print_building_table():
